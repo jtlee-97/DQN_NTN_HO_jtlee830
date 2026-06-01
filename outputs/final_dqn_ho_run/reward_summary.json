@@ -1,0 +1,25 @@
+{
+  "weights": {
+    "sinr": 55.0,
+    "outage": 100.0,
+    "rlf": 150.0,
+    "uho": 35.0,
+    "hopp": 20.0,
+    "short_tos": 12.0,
+    "ho": 2.0,
+    "rb": 0.01,
+    "avg_tos": 8.0
+  },
+  "normalizers": {
+    "sinr_min_db": -24.0,
+    "sinr_max_db": 5.0,
+    "rlf_count": 12.0,
+    "uho_count": 20.0,
+    "hopp_count": 4.0,
+    "short_tos_count": 20.0,
+    "ho_count": 20.0,
+    "rb_count": 260.0,
+    "avg_tos_s": 6.0,
+    "outage_fraction": 1.0
+  }
+}

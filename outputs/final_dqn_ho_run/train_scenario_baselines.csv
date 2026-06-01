@@ -1,0 +1,3 @@
+avg_sinr_db,avg_tos_s,baseline,ho_count,outage_time_s,rb_per_s_ue,reward,rlf_count,scenario_idx,scenario_seed,short_tos_count,uho_count,uho_per_ho
+3.5300639620124534,2.159999999999999,unsafe,5,0.8,2.9444444444444446,47.79570736679933,0,0,10009,1,1,0.2
+3.0285478819080325,2.2399999999999984,standard,5,0.8,2.9444444444444446,34.45122284706106,1,0,10009,1,1,0.2

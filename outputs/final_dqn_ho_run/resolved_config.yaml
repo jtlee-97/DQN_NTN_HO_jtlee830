@@ -1,0 +1,138 @@
+seed: 7
+baseline_policy: a3_rsrp
+dqn_feature_mode: distance_predictive
+future_action_mode: guarded
+distance_margin_m: 1000.0
+future_distance_margin_m: 1000.0
+approaching_margin_m: 500.0
+simulation:
+  seed: 7
+  total_time_s: 18.0
+  sample_time_s: 0.2
+  ue_mode: fixed
+  ue_x_m: 0.0
+  ue_y_m: 0.0
+  ue_speed_mps: 0.0
+  ue_mobility_mode: linear
+  ue_speed_min_mps: 277.7777777778
+  ue_speed_max_mps: 277.7777777778
+  ue_heading_deg: null
+  ue_random_heading: true
+  lookahead_horizons_s:
+  - 0.6
+  - 1.2
+  - 2.0
+  ue_cell_index: 0
+  ue_random_radius_min_ratio: 0.0
+  ue_random_radius_max_ratio: 1.2
+  ue_random_angle_deg: null
+  ue_random_cell_min_tier: 0
+  ue_random_cell_max_tier: 2
+  channel_mode: matlab_like_deterministic
+  beam_layout_mode: overlap_19beam
+  overlay_satellite_count: 3
+  overlay_beams_per_satellite: 19
+  overlay_satellite_spread_m: 24000.0
+  overlay_beam_jitter_m: 300.0
+  overlay_ring_jitter_m: 700.0
+  overlay_track_group_count: 1
+  overlay_track_spacing_m: 0.0
+  episodes_eval: 200
+  episodes_train: 3000
+  exclude_serving_from_targets: true
+  rlf_mode: timer_qout_qin
+system:
+  cell_radius_m: 23120
+  cell_isd_m: 42000
+  altitude_m: 600000
+  sat_speed_mps: 7560
+  carrier_freq_hz: 2000000000
+  bandwidth_hz: 20000000
+  rb_bandwidth_hz: 180000
+  tx_gain_db: 30
+  aperture_m: 2.6
+  eirp_dbm: 66
+  noise_figure_db: 7.0
+  interference_top_k: 0
+  interference_neighbor_count: 18
+  hys_m: 0.0
+  ttt_s: 0.0
+  t310_s: 1.0
+  q_out_db: -8.0
+  q_in_db: -6.0
+  min_tos_s: 2.0
+  num_sites: 57
+  a3_offset_db: 1.0
+  a3_hysteresis_db: 0.5
+  a3_ttt_s: 0.4
+  a3_min_tos_s: null
+action_grid:
+  thresh1_m: []
+  thresh2_m: []
+  thresh1_range_m: null
+  thresh2_range_m: null
+  range_step_m: null
+reward:
+  w_sinr: 1.0
+  w_rlf: 10.0
+  w_uho: 5.0
+  w_ho: 0.1
+  w_rbs: 0.02
+  w_outage: 1.0
+  w_prep_fail: 0.2
+  w_hopp: 2.0
+  w_serving_distance: 0.05
+  w_best_distance_gain: 0.05
+  episode_w_sinr: 55.0
+  episode_w_outage: 100.0
+  episode_w_rlf: 150.0
+  episode_w_uho: 35.0
+  episode_w_hopp: 20.0
+  episode_w_short_tos: 12.0
+  episode_w_ho: 2.0
+  episode_w_rb: 0.01
+  episode_w_avg_tos: 8.0
+  episode_norm_sinr_min_db: -24.0
+  episode_norm_sinr_max_db: 5.0
+  episode_norm_rlf_count: 12.0
+  episode_norm_ho_count: 20.0
+  episode_norm_uho_count: 20.0
+  episode_norm_hopp_count: 4.0
+  episode_norm_short_tos_count: 20.0
+  episode_norm_rb_count: 260.0
+  episode_norm_tos_s: 6.0
+q_learning:
+  alpha: 0.15
+  gamma: 0.98
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_episodes: 500
+  discretization_bins: {}
+dqn:
+  learning_rate: 0.001
+  gamma: 0.92
+  epsilon_start: 0.25
+  epsilon_end: 0.02
+  epsilon_decay_episodes: 600
+  hidden_dim: 64
+  batch_size: 64
+  buffer_size: 50000
+  target_update_freq: 150
+  warmup_steps: 50
+  train_freq: 1
+  gradient_clip: 1.0
+  loss_type: huber
+ddqn:
+  learning_rate: 0.001
+  gamma: 0.92
+  epsilon_start: 0.25
+  epsilon_end: 0.02
+  epsilon_decay_episodes: 600
+  hidden_dim: 64
+  batch_size: 64
+  buffer_size: 50000
+  target_update_freq: 150
+  warmup_steps: 50
+  train_freq: 1
+  gradient_clip: 1.0
+  loss_type: huber

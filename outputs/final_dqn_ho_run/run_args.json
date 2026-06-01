@@ -1,0 +1,22 @@
+{
+  "config": "configs/rl_train_simple_dqn_handover.yaml",
+  "output": "outputs/final_proposed_dqn_3sat_neighbor18_qout8_qin6_ue_origin_1000kmh_18s_full_3000",
+  "episodes": 3000,
+  "eval_episodes": 128,
+  "eval_interval": 500,
+  "log_interval": 100,
+  "rl_reward_scale": 20.0,
+  "reward_transform": "scale",
+  "reward_clip": 5.0,
+  "scenario_mode": "fixed",
+  "train_scenario_count": 1,
+  "val_scenario_count": 128,
+  "train_seed_offset": 10002,
+  "val_seed_offset": 100000,
+  "test_seed_offset": 100000,
+  "scenario_random_mix_start": 10000,
+  "scenario_random_mix_decay": 4000,
+  "initial_eval": true,
+  "disable_paired_eval": false,
+  "ddqn": false
+}
